@@ -18,8 +18,7 @@ public class UFO : MonoBehaviour
     [SerializeField] private int _trajectoriesPerSpawn = 2;
     [SerializeField] private float _spawnDistanceFromPlayer = 20;
     [SerializeField] private float _xyOffset = 10;
-    public float _minDistance = 50.0f; // Minimum distance from the camera.
-    public float _maxDistance = 100.0f; // Maximum distance from the camera.
+    
 
     [SerializeField] private float _movementSpeed = 5;
     [SerializeField] private int _cooldownMinTime = 5;
@@ -42,7 +41,7 @@ public class UFO : MonoBehaviour
         float randomY = Random.Range(-_xyOffset, _xyOffset);
 
         // Calculate the Z coordinate using a random value within the specified range.
-        float randomZ = Random.Range(_minDistance, _maxDistance);
+        float randomZ = Random.Range(-_xyOffset, _xyOffset);
 
         // Create a new Vector3 using the random coordinates.
         Vector3 newPosition = new Vector3(cameraPosition.x + randomX, cameraPosition.y + randomY, cameraPosition.z + randomZ);

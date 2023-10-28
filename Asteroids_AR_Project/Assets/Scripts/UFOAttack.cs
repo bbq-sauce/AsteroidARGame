@@ -8,8 +8,7 @@ public class UFOAttack : MonoBehaviour
 
     [SerializeField] private float _fireCooldownTime = 0.3f;
     [SerializeField] private UnityEvent OnShoot;
-    // Start is called before the first frame update
-
+   
     
     private void OnEnable()
     {

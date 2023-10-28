@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2476240219291711740}
   - component: {fileID: 693778110900235054}
   - component: {fileID: 2505148007696192792}
+  - component: {fileID: 7928478617010467234}
   m_Layer: 0
   m_Name: MediumAsteroid
   m_TagString: Enemy
@@ -192,7 +193,19 @@ MonoBehaviour:
       m_Calls: []
   OnZeroHealth:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7928478617010467234}
+        m_TargetAssemblyTypeName: CreateObject, Assembly-CSharp
+        m_MethodName: CreateNewObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnReceiveHealth:
     m_PersistentCalls:
       m_Calls: []
@@ -238,6 +251,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameState: {fileID: 11400000, guid: d87e26d0e47a3004391e4764caa329d1, type: 2}
+--- !u!114 &7928478617010467234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542716035592334486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8685a4849cd21f94bbccd246baae1604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToCreate: {fileID: 6670790405646613894, guid: 81258f31275e4514ba818f226d0b6d1d,
+    type: 3}
+  _useSpawnPoint: 0
+  _chance: 1
+  _referenceObjectRotation: {fileID: 0}
+  _amountOfObjects: 1
+  _randomizeInitialPositon: 0
+  _xRandomizationFactor: 1
+  _yRandomizationFactor: 1
+  _zRandomizationFactor: 1
 --- !u!1001 &7900214978858142727
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8689563077111402833}
   - component: {fileID: 2394066397092385714}
   - component: {fileID: 1122695974382660319}
+  - component: {fileID: 2338912049809459018}
   m_Layer: 0
   m_Name: SmallAsteroid
   m_TagString: Enemy
@@ -157,7 +158,19 @@ MonoBehaviour:
       m_Calls: []
   OnZeroHealth:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2338912049809459018}
+        m_TargetAssemblyTypeName: CreateObject, Assembly-CSharp
+        m_MethodName: CreateNewObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnReceiveHealth:
     m_PersistentCalls:
       m_Calls: []
@@ -203,6 +216,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameState: {fileID: 11400000, guid: d87e26d0e47a3004391e4764caa329d1, type: 2}
+--- !u!114 &2338912049809459018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053748996895779932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8685a4849cd21f94bbccd246baae1604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToCreate: {fileID: 6670790405646613894, guid: 81258f31275e4514ba818f226d0b6d1d,
+    type: 3}
+  _useSpawnPoint: 0
+  _chance: 1
+  _referenceObjectRotation: {fileID: 0}
+  _amountOfObjects: 1
+  _randomizeInitialPositon: 0
+  _xRandomizationFactor: 1
+  _yRandomizationFactor: 1
+  _zRandomizationFactor: 1
 --- !u!1001 &1158971073500311769
 PrefabInstance:
   m_ObjectHideFlags: 0

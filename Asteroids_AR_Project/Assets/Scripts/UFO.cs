@@ -23,6 +23,8 @@ public class UFO : MonoBehaviour
     [SerializeField] private float _movementSpeed = 5;
     [SerializeField] private int _cooldownMinTime = 5;
     [SerializeField] private int _cooldownMaxTime = 15;
+    [SerializeField] private bool spawmMysteryBoxOnDeath;
+    [SerializeField]private GameObject _mysteryBox;
     [SerializeField] private GameState _gameState;
 
 
@@ -32,6 +34,8 @@ public class UFO : MonoBehaviour
     [SerializeField] private UnityEvent OnStartAttacking;
     [SerializeField] private UnityEvent OnStopAttacking;
     [SerializeField] private UnityEvent OnDie;
+
+    [SerializeField] private AudioSfx _ufoOnScene;
     Vector3 GetNewPositionVector()
     {
         Vector3 cameraPosition = Camera.main.transform.position;
@@ -61,6 +65,8 @@ public class UFO : MonoBehaviour
 
     public void StartCooldown()
     {
+        _ufoOnScene.StopAudio();
+
         StartCoroutine(IdleRoutine());
     }
     public UFOStates CurrentState
@@ -114,6 +120,10 @@ public class UFO : MonoBehaviour
             _trajectoryVectors.Add(GetNewPositionVector());
         }
 
+       
+
+        _ufoOnScene.PlayAudio(gameObject);
+
         StartCoroutine(AttackMovement());
     }
 
@@ -144,5 +154,6 @@ public class UFO : MonoBehaviour
 
         StopAllCoroutines();
         StartCooldown();
+        _ufoOnScene.StopAudio();
     }
 }
